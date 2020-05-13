@@ -23,9 +23,12 @@ __author__ = "Kathryn Anderson"
 
 
 def verbing(s):
-    # your code here
-    return
-
+    if len(s) < 3:
+        return s
+    elif s.endswith('ing'):
+        return ''.join(s + 'ly')
+    else:
+        return ''.join(s + 'ing')
 
 # E. not_bad
 # Given a string, find the first occurrence of the substrings

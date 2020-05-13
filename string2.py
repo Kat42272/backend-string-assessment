@@ -39,10 +39,19 @@ def verbing(s):
 #   'This dinner is not that bad!' -> 'This dinner is good!'
 
 
-def not_bad(s):
-    # your code here
-    return
-
+# def not_bad(s):
+#     not_index = s.index('not')
+#     bad_index = s.index('bad')
+#     if not_index < bad_index:
+#         if s[-1] == "!":
+#             n = s[:not_index]
+#             m = s[-1]
+#             return str(n) + "good" + str(m)
+#         else:
+#             o = s[:not_index]
+#             return str(o) + "good"
+#     else:
+#         return s
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -55,9 +64,13 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    half_a, half_b = (len(a) + 1)/2, (len(b) +1)/2
+    return a[:int(half_a)] + b[:int(half_b)] + a[int(half_a):] + b[int(half_b):]
 
+# Credit given to: 
+# https://stackoverflow.com/questions/17002516/python-divide-odd-length-string-and-combine
+# Answer given by: dansalmo HOWEVER: I needed to add int to the return statement
+    
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
@@ -83,11 +96,11 @@ def main():
     test(verbing('swimming'), 'swimmingly')
     test(verbing('do'), 'do')
 
-    print('\nnot_bad')
-    test(not_bad('This movie is not so bad'), 'This movie is good')
-    test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
-    test(not_bad('This tea is not hot'), 'This tea is not hot')
-    test(not_bad("It's bad yet not"), "It's bad yet not")
+    # print('\nnot_bad')
+    # test(not_bad('This movie is not so bad'), 'This movie is good')
+    # test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
+    # test(not_bad('This tea is not hot'), 'This tea is not hot')
+    # test(not_bad("It's bad yet not"), "It's bad yet not")
 
     print('\nfront_back')
     test(front_back('abcd', 'xy'), 'abxcdy')

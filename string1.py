@@ -43,9 +43,13 @@ def donuts(count):
 
 
 def both_ends(s):
-    # your code here
-    return
-
+    if len(s) <= 2:
+        return('')
+    else:
+        a = s[:2]
+        b = s[-2:]
+        result = a + b
+        return(result)
 
 # C. fix_start
 # Given a string s, return a string where all occurrences

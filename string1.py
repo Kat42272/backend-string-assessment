@@ -28,9 +28,10 @@ __author__ = "Kathryn Anderson"
 
 
 def donuts(count):
-    # your code here
-    return
-
+    if count < 10:
+        return("Number of donuts: " + str(count))
+    else:
+        return("Number of donuts: many")
 
 # B. both_ends
 # Given a string s, return a string made of the first 2

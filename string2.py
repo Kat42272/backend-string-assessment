@@ -39,19 +39,23 @@ def verbing(s):
 #   'This dinner is not that bad!' -> 'This dinner is good!'
 
 
-# def not_bad(s):
-#     not_index = s.index('not')
-#     bad_index = s.index('bad')
-#     if not_index < bad_index:
-#         if s[-1] == "!":
-#             n = s[:not_index]
-#             m = s[-1]
-#             return str(n) + "good" + str(m)
-#         else:
-#             o = s[:not_index]
-#             return str(o) + "good"
-#     else:
-#         return s
+def not_bad(s):
+    not_index = s.find('not')
+    bad_index = s.find('bad')
+    if not_index < bad_index:
+        if s[-1] == "!":
+            n = s[:not_index]
+            m = s[-1]
+            return str(n) + "good" + str(m)
+        else:
+            o = s[:not_index]
+            return str(o) + "good"
+    elif bad_index == False:
+        return s
+    else:
+        return s
+
+
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -96,11 +100,11 @@ def main():
     test(verbing('swimming'), 'swimmingly')
     test(verbing('do'), 'do')
 
-    # print('\nnot_bad')
-    # test(not_bad('This movie is not so bad'), 'This movie is good')
-    # test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
-    # test(not_bad('This tea is not hot'), 'This tea is not hot')
-    # test(not_bad("It's bad yet not"), "It's bad yet not")
+    print('\nnot_bad')
+    test(not_bad('This movie is not so bad'), 'This movie is good')
+    test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
+    test(not_bad('This tea is not hot'), 'This tea is not hot')
+    test(not_bad("It's bad yet not"), "It's bad yet not")
 
     print('\nfront_back')
     test(front_back('abcd', 'xy'), 'abxcdy')

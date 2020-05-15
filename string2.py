@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Kathryn Anderson"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,9 +23,12 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
-
+    if len(s) < 3:
+        return s
+    elif s.endswith('ing'):
+        return ''.join(s + 'ly')
+    else:
+        return ''.join(s + 'ing')
 
 # E. not_bad
 # Given a string, find the first occurrence of the substrings
@@ -37,8 +40,21 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+    not_index = s.find('not')
+    bad_index = s.find('bad')
+    if not_index < bad_index:
+        if s[-1] == "!":
+            n = s[:not_index]
+            m = s[-1]
+            return str(n) + "good" + str(m)
+        else:
+            o = s[:not_index]
+            return str(o) + "good"
+    elif bad_index == False:
+        return s
+    else:
+        return s
+
 
 
 # F. front_back
@@ -52,9 +68,13 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    half_a, half_b = (len(a) + 1)/2, (len(b) +1)/2
+    return a[:int(half_a)] + b[:int(half_b)] + a[int(half_a):] + b[int(half_b):]
 
+# Credit given to: 
+# https://stackoverflow.com/questions/17002516/python-divide-odd-length-string-and-combine
+# Answer given by: dansalmo HOWEVER: I needed to add int to the return statement
+    
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
